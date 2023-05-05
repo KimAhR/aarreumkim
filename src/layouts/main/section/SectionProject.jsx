@@ -23,7 +23,7 @@ function SectionProject() {
       id: 2,
       title: "PORTFOLIO",
       btn: "03.PORTFOLIO",
-      content: "https://.kimahr.github.io/aarreumkim",
+      content: "https://kimahr.github.io/aarreumkim/",
       image: "/img/main_bg03.jpg",
       dots: "03",
     },
