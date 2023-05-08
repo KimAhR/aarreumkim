@@ -58,8 +58,8 @@ function SectionProject() {
         </Title>
         <TitleBox>
           <h3>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nesciunt, unde vel, ipsum nulla quos alias quidem velit vero est sed. Voluptate nihil distinctio maiores architecto
-            corrupti, quam suscipit laudantium!
+            React 원리 이해 · React의 기본 구조 및 실행 방법 이해 · 컴포넌트 생성 및 라이프 사이클 · SPA(Single Page Application)의 이해 및 구현, 웹 페이지 개선 · 클래스 컴포넌트에서 함수형 컴포넌트의
+            비교 및 구현 (React Hooks), 웹 페이지 배포 · Github을 활용한 프로젝트 배포 등을 배웠습니다.
           </h3>
         </TitleBox>
       </TitleWrap>
@@ -240,10 +240,10 @@ const TitleBox = styled.div`
   }
   h3 {
     width: 100%;
-    font-family: "Montserrat";
+
     font-weight: 500;
-    color: #000;
-    font-size: 18px;
+    color: ${({ theme }) => theme.colors.black_color};
+    font-size: 1.25rem;
     line-height: 160%;
     margin-top: 60px;
     @media ${({ theme }) => theme.device.laptop} {
@@ -252,8 +252,6 @@ const TitleBox = styled.div`
     @media ${({ theme }) => theme.device.mobile} {
       text-align: center;
       width: 100%;
-      font-family: "Montserrat";
-      font-weight: 500;
       color: #000;
       font-size: 18px;
       line-height: 160%;
@@ -435,12 +433,16 @@ const OneWrap = styled.div`
     display: flex;
     justify-content: space-around;
     position: absolute;
-    bottom: 8%;
+    bottom: 10%;
     left: 40%;
   }
 
   @media ${({ theme }) => theme.device.mobile} {
     left: 35%;
+    bottom: 8%;
+  }
+  @media only screen and (max-width: 600px) {
+    bottom: 12%;
   }
 `;
 

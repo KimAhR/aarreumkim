@@ -8,10 +8,9 @@ function SectionProfile() {
           <Title>
             <h4>01</h4>
             <h2>about</h2>
-            {/* <h3>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nesciunt, unde vel, ipsum nulla quos alias quidem velit vero est sed. Voluptate nihil distinctio maiores architecto
-              corrupti, quam suscipit laudantium!
-            </h3> */}
+            <h3>
+              Better late than never !!! <br />I started later than others, but I will become a front-end developer who trying to run faster.
+            </h3>
           </Title>
         </TitleWrap>
         <BgWrap>
@@ -63,8 +62,9 @@ function SectionProfile() {
               <Txt>
                 <h3>SKILLS</h3>
                 <ContentWrap>
-                  <div> HTML5, CSS3, 자바스크립트(Java Script), 제이쿼리(JQuery), 리액트(React), 깃허브(Github)</div>
+                  <div>Figma나 디자인 소스를 받아 화면을 구성하는 퍼플리싱 업무를 수행할 수 있고, UI, 기능 등을 Component 형태로 잘게 나누어 부품화하고 필요한 곳에 조립하여 사용할 수 있습니다. </div>
                 </ContentWrap>
+                <Skill> HTML5, CSS3, 자바스크립트(Java Script), 제이쿼리(JQuery), 리액트(React), 깃허브(Github)</Skill>
               </Txt>
             </TextWrap>
           </Bg>
@@ -158,20 +158,19 @@ const Title = styled.div`
     margin-top: -150px;
   }
   h4 {
-    font-family: "Montserrat";
     font-weight: 500;
     color: #000;
     font-size: 20px;
     @media ${({ theme }) => theme.device.laptop} {
       text-align: center;
-      font-family: "Montserrat";
+
       font-weight: 500;
 
       font-size: 18px;
     }
     @media ${({ theme }) => theme.device.mobile} {
       text-align: center;
-      font-family: "Montserrat";
+
       font-weight: 500;
 
       font-size: 18px;
@@ -179,7 +178,7 @@ const Title = styled.div`
   }
   h2 {
     width: 100%;
-    font-family: "Montserrat";
+
     font-weight: 600;
 
     font-size: 60px;
@@ -187,7 +186,7 @@ const Title = styled.div`
     line-height: 120%;
     @media ${({ theme }) => theme.device.laptop} {
       width: 100%;
-      font-family: "Montserrat";
+
       font-weight: 600;
 
       font-size: 60px;
@@ -197,7 +196,7 @@ const Title = styled.div`
     }
     @media ${({ theme }) => theme.device.tablet} {
       width: 100%;
-      font-family: "Montserrat";
+
       font-weight: 600;
 
       margin-top: 10px;
@@ -206,7 +205,7 @@ const Title = styled.div`
     @media ${({ theme }) => theme.device.mobile} {
       text-align: center;
       width: 100%;
-      font-family: "Montserrat";
+
       font-weight: 700;
 
       margin-top: 20px;
@@ -215,19 +214,21 @@ const Title = styled.div`
   }
   h3 {
     width: 100%;
-    font-family: "Montserrat";
+
     font-weight: 500;
     color: ${({ theme }) => theme.colors.black_color};
-    font-size: 18px;
+    font-size: 1.25rem;
     line-height: 160%;
+
     margin-top: 60px;
     @media ${({ theme }) => theme.device.laptop} {
+      text-align: center;
       width: 100%;
     }
     @media ${({ theme }) => theme.device.mobile} {
       text-align: center;
       width: 100%;
-      font-family: "Montserrat";
+
       font-weight: 500;
 
       font-size: 18px;
@@ -303,6 +304,12 @@ const ContentWrap = styled.div`
   width: 100%;
   line-height: 160%;
   color: ${({ theme }) => theme.colors.black_color};
+  div {
+    @media ${({ theme }) => theme.device.mobile} {
+      width: 100%;
+      font-size: 0.8rem;
+    }
+  }
   h4 {
     width: 40%;
     font-size: 1rem;
@@ -322,6 +329,16 @@ const Content = styled.div`
   font-size: 1rem;
   font-weight: 500;
   color: ${({ theme }) => theme.colors.black_color};
+  @media ${({ theme }) => theme.device.mobile} {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+`;
+
+const Skill = styled.div`
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 10px;
   @media ${({ theme }) => theme.device.mobile} {
     width: 100%;
     font-size: 0.8rem;
