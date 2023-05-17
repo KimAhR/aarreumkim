@@ -65,8 +65,8 @@ export default Main;
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  position: relative;
-  background: ${({ theme }) => theme.colors.white_color};
+  /* position: relative;
+  background: ${({ theme }) => theme.colors.white_color}; */
 `;
 
 const Wrap = styled.div`

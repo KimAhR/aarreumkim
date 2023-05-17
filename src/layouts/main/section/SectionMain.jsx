@@ -4,11 +4,12 @@ function SectionMain() {
   return (
     <Container>
       <Wrap>
-        <h2>PORTFOLIO</h2>
+        <img src="img/bg.jpg" />
+        {/* <h2>PORTFOLIO</h2>
         <div>
           <p>KIM AH REUM</p>
           <span>FRONT-END DEVELOPER</span>
-        </div>
+        </div> */}
       </Wrap>
     </Container>
   );
@@ -21,12 +22,11 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   height: 1000px;
-  display: flex;
-  align-items: center;
-  background-color: ${({ theme }) => theme.colors.main_color};
+  top: 0;
   color: ${({ theme }) => theme.colors.white_color};
   font-weight: ${({ theme }) => theme.fonts.weightSemiBold};
   margin: 0 auto;
+
   @media ${({ theme }) => theme.device.laptop} {
     width: 100%;
     height: 800px;
@@ -34,6 +34,10 @@ const Container = styled.div`
   @media ${({ theme }) => theme.device.tablet} {
     width: 100%;
     height: 600px;
+  }
+  img {
+    width: 100%;
+    height: 100%;
   }
 `;
 
@@ -45,6 +49,7 @@ const Wrap = styled.div`
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
+
   @media ${({ theme }) => theme.device.laptop} {
   }
   h2 {
