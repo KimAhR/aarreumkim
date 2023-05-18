@@ -187,7 +187,7 @@ const Title = styled.div`
     font-weight: 600;
     color: #fff;
     font-size: 6rem;
-    margin-bottom: 30px;
+    margin: 100px auto;
 
     @media ${({ theme }) => theme.device.tablet} {
       width: 100%;
@@ -292,7 +292,7 @@ const SlideTxt = styled.div`
     position: relative;
     font-weight: 700;
     color: #fff;
-    font-size: 150px;
+    font-size: 5rem;
     transition: all 0.4s;
     @media ${({ theme }) => theme.device.laptop} {
       display: inline-block;

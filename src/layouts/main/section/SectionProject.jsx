@@ -42,42 +42,54 @@ function SectionProject() {
         <ContentWrap>
           <Content01>
             <a href="https://kimahr.github.io/movie-list/">
-              <ImgArea>
+              {/* <ImgArea>
                 <img src={process.env.PUBLIC_URL + "/img/movielist.png"} />
-              </ImgArea>
+              </ImgArea> */}
               <TextWrap>
-                <p>movielist</p>
+                <p>#REACT</p>
               </TextWrap>
+              <HoverWrap>
+                <p>view</p>
+              </HoverWrap>
             </a>
           </Content01>
           <Content02>
-            <a href="https://kimahr.github.io/movie-list/">
-              <ImgArea>
+            <a href="https://kimahr.github.io/todolist/">
+              {/* <ImgArea>
                 <img src={process.env.PUBLIC_URL + "/img/todolist.png"} />
-              </ImgArea>
+              </ImgArea> */}
               <TextWrap>
-                <p>movielist</p>
+                <p>#REACT</p>
               </TextWrap>
+              <HoverWrap>
+                <p>movielist</p>
+              </HoverWrap>
             </a>
           </Content02>
           <Content03>
             <a href="https://kimahr.github.io/movie-list/">
-              <ImgArea>
+              {/* <ImgArea>
                 <img src={process.env.PUBLIC_URL + "/img/portfolio.jpg"} />
-              </ImgArea>
+              </ImgArea> */}
               <TextWrap>
-                <p>movielist</p>
+                <p>#REACT</p>
               </TextWrap>
+              <HoverWrap>
+                <p>movielist</p>
+              </HoverWrap>
             </a>
           </Content03>
           <Content04>
             <a href="https://kimahr.github.io/movie-list/">
-              <ImgArea>
+              {/* <ImgArea>
                 <img src={process.env.PUBLIC_URL + "/img/portfolio.jpg"} />
-              </ImgArea>
+              </ImgArea> */}
               <TextWrap>
-                <p>movielist</p>
+                <p>#REACT</p>
               </TextWrap>
+              <HoverWrap>
+                <p>movielist</p>
+              </HoverWrap>
             </a>
           </Content04>
         </ContentWrap>
@@ -90,8 +102,8 @@ export default SectionProject;
 
 const Container = styled.div`
   width: 100%;
-  height: 1100px;
-
+  height: 1500px;
+  margin-top: 300px;
   @media only screen and (max-width: 768px) {
     width: 100%;
     height: 1500px;
@@ -102,7 +114,6 @@ const Container = styled.div`
 const Wrap = styled.div`
   position: relative;
   width: 100%;
-
   height: 100%;
   margin: 0 auto;
 `;
@@ -122,7 +133,7 @@ const TitleWrap = styled.div`
     position: relative;
 
     width: 100%;
-    max-width: 80%;
+    max-width: 75%;
     margin: 0 auto;
     padding-top: 200px;
     display: flex;
@@ -165,7 +176,7 @@ const Title = styled.div`
     }
   }
   h2 {
-    width: 60%;
+    width: 50%;
 
     font-weight: 600;
     color: #000;
@@ -198,7 +209,8 @@ const Title = styled.div`
 const ContentWrap = styled.ul`
   width: 100%;
   max-width: 75%;
-  padding-top: 50px;
+  height: 90%;
+  padding-top: 100px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -209,22 +221,22 @@ const ContentWrap = styled.ul`
 
   li {
     width: 48%;
-    height: 480px;
+    height: 600px;
     margin: 10px auto;
 
     box-sizing: border-box;
-    background-color: #393e46;
-    @media only screen and (max-width: 768px) {
-      width: 100%;
-      height: 300px;
-    }
+    background-color: #222831;
     a {
       position: relative;
       width: 100%;
       height: 100%;
       transition: all 0.1s;
 
-      color: #000;
+      color: #fff;
+    }
+    @media only screen and (max-width: 768px) {
+      width: 100%;
+      height: 300px;
     }
   }
 `;
@@ -232,36 +244,31 @@ const ContentWrap = styled.ul`
 const Content01 = styled.li`
   width: 100%;
   height: 100%;
-  background-color: #4c4c6d;
 `;
 const Content02 = styled.li`
   width: 100%;
   height: 100%;
-  background-color: #1b9c85;
 `;
 const Content03 = styled.li`
   width: 100%;
   height: 100%;
-  background-color: #4c4c6d;
 `;
 const Content04 = styled.li`
   width: 100%;
   height: 100%;
-  background-color: #1b9c85;
 `;
 
 const ImgArea = styled.div`
-  width: 90%;
+  width: 80%;
   height: 50%;
   margin: 30px auto;
   display: flex;
   align-items: center;
-  background-color: #fff;
+  background-color: #000;
   img {
     width: 100%;
     height: 100%;
-
-    object-fit: contain;
+    object-fit: cover;
   }
 `;
 
@@ -275,6 +282,8 @@ const Text = styled.p`
 `;
 
 const HoverWrap = styled.div`
+  position: absolute;
+  top: 0;
   display: flex;
 
   justify-content: center;
@@ -285,15 +294,15 @@ const HoverWrap = styled.div`
   &:hover {
     color: #fff;
     text-align: center;
-    background: #000;
+    background-color: #000;
     font-weight: 600;
-    opacity: 0.8;
   }
 `;
 
 const TextWrap = styled.div`
   display: flex;
-  justify-content: right;
+  justify-content: center;
+  align-items: center;
   width: 50%;
   height: 100%;
 `;

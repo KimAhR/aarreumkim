@@ -53,7 +53,9 @@ function Main() {
       {/* <SectionSkills /> */}
       <SectionAbout />
       <SectionDevelop />
-      <SectionProfile />
+      {/* <SectionProfile /> */}
+
+      {/* <Animation /> */}
       {/* <SectionDevelop /> */}
       <SectionProject />
 

@@ -44,7 +44,9 @@ const flowing = keyframes`
 
 const FlowBox = styled.div`
   width: 100%;
-
+  max-width: 75%;
+  height: 700px;
+  margin: 0 auto;
   overflow: hidden;
 `;
 
@@ -59,10 +61,10 @@ const FlowWrap = styled.div`
 `;
 
 const Flow = styled.div`
-  font-size: 120px;
-  animation: ${flowing} 15s linear infinite;
+  font-size: 160px;
+  /* animation: ${flowing} 15s linear infinite; */
   span {
-    color: #307672;
+    color: #222831;
     /* text-shadow: -3px 0 #053742, 0 3px #053742, 3px 0 #053742, 0 -3px #053742; */
     display: inline-block;
     font-weight: ${({ theme }) => theme.fonts.weightExtra};

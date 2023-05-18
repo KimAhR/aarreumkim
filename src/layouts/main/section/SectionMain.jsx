@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 function SectionMain() {
   return (
-    <Container style={{ backgroundImage: "url(/assets/bg.jpg)" }}>
+    <Container>
       <Wrap>
         <div>
           <p>KIM AH REUM PORTFOLIO</p>
@@ -52,7 +52,7 @@ const Wrap = styled.div`
 
   div {
     margin: 0 auto;
-    background: url("/img/bg.jpg") center / cover no-repeat;
+
     p {
       margin: 50px auto;
       font-size: 5rem;
