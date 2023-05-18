@@ -1,52 +1,62 @@
 import styled from "styled-components";
+import { useState, useRef, useEffect } from "react";
 
 function SectionProject() {
   const list = [
-    {
-      name: "MOVIELIST",
-      src: "/img/todolist.png",
-      url: "https://kimahr.github.io/movie-list/",
-      material: "Recycled",
-    },
-    {
-      name: "TODOLIST",
-      src: "/img/todolist.png",
-      url: "https://kimahr.github.io/todolist/",
-      material: "Recycled",
-    },
-    {
-      name: "PORTFOLIO",
-      src: "/img/portfolio.jpg",
-      url: "https://github.com/KimAhR/aarreumkim/",
-      material: "Recycled",
-    },
-    {
-      name: "DIARY",
-      src: "/img/macbook.png",
-      url: "https://kimahr.github.io/movielist/",
-      material: "Leather",
-    },
+    { id: 0, name: "MOVIELIST", image: "/img/movielist.png", url: "https://kimahr.github.io/movie-list/", material: "Recycled" },
+    { id: 1, name: "TODOLIST", image: "/img/todolist.png", url: "https://kimahr.github.io/todolist/", material: "Recycled" },
+    { id: 2, name: "PORTFOLIO", image: "/img/portfolio.jpg", url: "https://github.com/KimAhR/aarreumkim/", material: "Recycled" },
+    { id: 3, name: "DIARY", image: "/img/portfolio.jpg", url: "https://kimahr.github.io/movielist/", material: "Leather" },
   ];
+
+  const delay = 2500;
+  const [index, setIndex] = useState(0);
+
+  const timeoutRef = useRef(null);
+
+  function resetTimeout() {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  }
+
+  useEffect(() => {
+    resetTimeout();
+    timeoutRef.current = setTimeout(() => setIndex((prevIndex) => (prevIndex === list.length - 1 ? 0 : prevIndex + 1)), delay);
+
+    return () => {
+      resetTimeout();
+    };
+  });
   return (
     <Container id="project">
       <TitleWrap>
         <Title>
           <h4>03</h4>
-          <h2>LEARN REACT</h2>
+          <h2>LEARN REACT PROJECT</h2>
         </Title>
       </TitleWrap>
       <Wrap>
         <ContentWrap>
-          <li>
-            <a href="https://kimahr.github.io/movie-list/">
-              <ImgArea>
-                <img src={process.env.PUBLIC_URL + "/img/movielist.png"} />
-              </ImgArea>
-              <TextWrap>
-                <p>movielist</p>
-              </TextWrap>
-            </a>
-          </li>
+          {list
+            .filter((content) => index === content.id)
+            .map((content) => (
+              <li>
+                <a href={content.url}>
+                  <ImgArea
+                    key={content.id}
+                    className={index === content.id ? ImgArea.active : null}
+                    onClick={() => setIndex(content.id)}
+                    style={{ transform: `translate3d(${index}%)`, transition: "all 3s" }}
+                  >
+                    <img src={process.env.PUBLIC_URL + content.image} />
+                  </ImgArea>
+                  <HoverWrap>
+                    <p>{content.name}</p>
+                  </HoverWrap>
+                </a>
+              </li>
+            ))}
           {/* <Content02>
             <a href="https://kimahr.github.io/movie-list/">
               <ImgArea>
@@ -87,8 +97,8 @@ export default SectionProject;
 
 const Container = styled.div`
   width: 100%;
-  height: 1600px;
-  margin-top: 500px;
+  height: 800px;
+  margin-top: 200px;
   @media only screen and (max-width: 768px) {
     width: 100%;
     height: 1500px;
@@ -111,7 +121,7 @@ const TitleWrap = styled.div`
 `;
 
 const Title = styled.div`
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
   display: flex;
@@ -178,8 +188,8 @@ const ContentWrap = styled.ul`
   }
 
   li {
-    width: 60%;
-    height: 300px;
+    width: 100%;
+    height: 500px;
     margin: 10px auto;
 
     box-sizing: border-box;
@@ -220,12 +230,10 @@ const ContentWrap = styled.ul`
 // `;
 
 const ImgArea = styled.div`
-  width: 40%;
-  height: 80%;
-  margin: 30px auto;
-  display: flex;
-  align-items: center;
-  background-color: #fff;
+  width: 80%;
+  height: 100%;
+
+  background-color: #ddd;
   img {
     width: 100%;
     height: 100%;
@@ -248,4 +256,24 @@ const TextWrap = styled.div`
   justify-content: right;
   width: 50%;
   height: 100%;
+`;
+
+const HoverWrap = styled.div`
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  p {
+    color: transparent;
+    &:hover {
+      color: #fff;
+      text-align: center;
+      background: #000;
+      font-weight: 600;
+      opacity: 0.8;
+    }
+  }
 `;
