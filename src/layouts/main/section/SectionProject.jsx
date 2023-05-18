@@ -31,8 +31,11 @@ function SectionProject() {
     <Container id="project">
       <TitleWrap>
         <Title>
-          <h4>03</h4>
           <h2>LEARN REACT</h2>
+          <h3>
+            React 원리 이해 · React의 기본 구조 및 실행 방법 이해 · 컴포넌트 생성 및 라이프 사이클 · SPA(Single Page Application)의 이해 및 구현, 웹 페이지 개선 · 클래스 컴포넌트에서 함수형 컴포넌트의
+            비교 및 구현 (React Hooks), 웹 페이지 배포 · Github을 활용한 프로젝트 배포 등을 배웠습니다.
+          </h3>
         </Title>
       </TitleWrap>
       <Wrap>
@@ -78,11 +81,6 @@ function SectionProject() {
             </a>
           </Content04>
         </ContentWrap>
-        <p>
-          {" "}
-          React 원리 이해 · React의 기본 구조 및 실행 방법 이해 · 컴포넌트 생성 및 라이프 사이클 · SPA(Single Page Application)의 이해 및 구현, 웹 페이지 개선 · 클래스 컴포넌트에서 함수형 컴포넌트의
-          비교 및 구현 (React Hooks), 웹 페이지 배포 · Github을 활용한 프로젝트 배포 등을 배웠습니다.
-        </p>
       </Wrap>
     </Container>
   );
@@ -92,8 +90,8 @@ export default SectionProject;
 
 const Container = styled.div`
   width: 100%;
-  height: 900px;
-  margin-top: 200px;
+  height: 1100px;
+
   @media only screen and (max-width: 768px) {
     width: 100%;
     height: 1500px;
@@ -104,56 +102,82 @@ const Container = styled.div`
 const Wrap = styled.div`
   position: relative;
   width: 100%;
-  max-width: 75%;
+
   height: 100%;
   margin: 0 auto;
 `;
 
 const TitleWrap = styled.div`
+  z-index: 2;
+
   width: 100%;
   max-width: 75%;
   margin: 0 auto;
-`;
-
-const Title = styled.div`
-  width: 50%;
-  margin: 0 auto;
-  text-align: center;
+  padding-top: 100px;
   display: flex;
-  flex-direction: column;
-  margin-top: -80px;
+  justify-content: space-between;
+
   @media ${({ theme }) => theme.device.laptop} {
-    margin-top: -150px;
+    z-index: 2;
+    position: relative;
+
+    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+    padding-top: 200px;
+    display: flex;
+    justify-content: space-between;
   }
   @media ${({ theme }) => theme.device.tablet} {
     width: 100%;
+    max-width: 80%;
+    display: flex;
+    justify-content: space-between;
   }
-  h4 {
+  @media ${({ theme }) => theme.device.mobile} {
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+  }
+`;
+
+const Title = styled.div`
+  width: 100%;
+  display: flex;
+
+  @media ${({ theme }) => theme.device.laptop} {
+    width: 100%;
+  }
+  h3 {
+    width: 80%;
+
     font-weight: 500;
-    color: ${({ theme }) => theme.colors.main_color};
-    font-size: 20px;
+    color: #000;
+    font-size: 18px;
+    line-height: 160%;
+    margin-top: 40px;
     @media ${({ theme }) => theme.device.mobile} {
       text-align: center;
 
       font-weight: 500;
-      color: ${({ theme }) => theme.colors.main_color};
+      color: #000;
       font-size: 18px;
     }
   }
   h2 {
-    width: 100%;
+    width: 60%;
 
     font-weight: 600;
-    color: ${({ theme }) => theme.colors.main_color};
-    font-size: 60px;
+    color: #000;
+    font-size: 4rem;
     margin-top: 20px;
     line-height: 120%;
 
     @media ${({ theme }) => theme.device.tablet} {
-      width: 70%;
+      width: 100%;
 
       font-weight: 600;
-      color: ${({ theme }) => theme.colors.main_color};
+      color: #000;
       font-size: 50px;
       margin-top: 20px;
       line-height: 120%;
@@ -163,7 +187,7 @@ const Title = styled.div`
       width: 100%;
 
       font-weight: 700;
-      color: ${({ theme }) => theme.colors.main_color};
+      color: #000;
       font-size: 50px;
       margin-top: 20px;
       line-height: 120%;
@@ -173,18 +197,19 @@ const Title = styled.div`
 
 const ContentWrap = styled.ul`
   width: 100%;
+  max-width: 75%;
   padding-top: 50px;
   margin: 0 auto;
   display: flex;
-
+  flex-wrap: wrap;
   justify-content: space-between;
   @media only screen and (max-width: 768px) {
     flex-direction: column;
   }
 
   li {
-    width: 24%;
-    height: 470px;
+    width: 48%;
+    height: 480px;
     margin: 10px auto;
 
     box-sizing: border-box;
