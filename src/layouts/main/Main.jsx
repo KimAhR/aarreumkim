@@ -7,7 +7,7 @@ import SectionDevelop from "./section/SectionDevelop";
 import SectionProject from "./section/SectionProject";
 
 import SectionSkill from "./section/SectionSkill";
-// import SectionProfile from "./section/SectionProfile";
+import SectionProfile from "./section/SectionProfile";
 function Main() {
   const [ScrollY, setScrollY] = useState(0);
   const [BtnStatus, setBtnStatus] = useState(false); // 버튼 상태
@@ -52,12 +52,13 @@ function Main() {
       <SectionSkill />
       {/* <SectionSkills /> */}
       <SectionAbout />
-
+      <SectionDevelop />
+      <SectionProfile />
       {/* <SectionDevelop /> */}
       <SectionProject />
-      {/* <SectionProfile /> */}
+
       {/* <Animation /> */}
-      <SectionDevelop />
+
       {/* <SectionSkill /> */}
     </Container>
   );

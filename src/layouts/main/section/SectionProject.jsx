@@ -1,63 +1,53 @@
 import styled from "styled-components";
-import { useState, useRef, useEffect } from "react";
 
 function SectionProject() {
   const list = [
-    { id: 0, name: "MOVIELIST", image: "/img/movielist.png", url: "https://kimahr.github.io/movie-list/", material: "Recycled" },
-    { id: 1, name: "TODOLIST", image: "/img/todolist.png", url: "https://kimahr.github.io/todolist/", material: "Recycled" },
-    { id: 2, name: "PORTFOLIO", image: "/img/portfolio.jpg", url: "https://github.com/KimAhR/aarreumkim/", material: "Recycled" },
-    { id: 3, name: "DIARY", image: "/img/portfolio.jpg", url: "https://kimahr.github.io/movielist/", material: "Leather" },
+    {
+      name: "MOVIELIST",
+      src: "/img/todolist.png",
+      url: "https://kimahr.github.io/movie-list/",
+      material: "Recycled",
+    },
+    {
+      name: "TODOLIST",
+      src: "/img/todolist.png",
+      url: "https://kimahr.github.io/todolist/",
+      material: "Recycled",
+    },
+    {
+      name: "PORTFOLIO",
+      src: "/img/portfolio.jpg",
+      url: "https://github.com/KimAhR/aarreumkim/",
+      material: "Recycled",
+    },
+    {
+      name: "DIARY",
+      src: "/img/macbook.png",
+      url: "https://kimahr.github.io/movielist/",
+      material: "Leather",
+    },
   ];
-
-  const delay = 2500;
-  const [index, setIndex] = useState(0);
-
-  const timeoutRef = useRef(null);
-
-  function resetTimeout() {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-  }
-
-  useEffect(() => {
-    resetTimeout();
-    timeoutRef.current = setTimeout(() => setIndex((prevIndex) => (prevIndex === list.length - 1 ? 0 : prevIndex + 1)), delay);
-
-    return () => {
-      resetTimeout();
-    };
-  });
   return (
     <Container id="project">
       <TitleWrap>
         <Title>
           <h4>03</h4>
-          <h2>LEARN REACT PROJECT</h2>
+          <h2>LEARN REACT</h2>
         </Title>
       </TitleWrap>
       <Wrap>
         <ContentWrap>
-          {list
-            .filter((content) => index === content.id)
-            .map((content) => (
-              <li>
-                <a href={content.url}>
-                  <ImgArea
-                    key={content.id}
-                    className={index === content.id ? ImgArea.active : null}
-                    onClick={() => setIndex(content.id)}
-                    style={{ transform: `translate3d(${index}%)`, transition: "all 3s" }}
-                  >
-                    <img src={process.env.PUBLIC_URL + content.image} />
-                  </ImgArea>
-                  <HoverWrap>
-                    <p>{content.name}</p>
-                  </HoverWrap>
-                </a>
-              </li>
-            ))}
-          {/* <Content02>
+          <Content01>
+            <a href="https://kimahr.github.io/movie-list/">
+              <ImgArea>
+                <img src={process.env.PUBLIC_URL + "/img/movielist.png"} />
+              </ImgArea>
+              <TextWrap>
+                <p>movielist</p>
+              </TextWrap>
+            </a>
+          </Content01>
+          <Content02>
             <a href="https://kimahr.github.io/movie-list/">
               <ImgArea>
                 <img src={process.env.PUBLIC_URL + "/img/todolist.png"} />
@@ -86,8 +76,13 @@ function SectionProject() {
                 <p>movielist</p>
               </TextWrap>
             </a>
-          </Content04> */}
+          </Content04>
         </ContentWrap>
+        <p>
+          {" "}
+          React 원리 이해 · React의 기본 구조 및 실행 방법 이해 · 컴포넌트 생성 및 라이프 사이클 · SPA(Single Page Application)의 이해 및 구현, 웹 페이지 개선 · 클래스 컴포넌트에서 함수형 컴포넌트의
+          비교 및 구현 (React Hooks), 웹 페이지 배포 · Github을 활용한 프로젝트 배포 등을 배웠습니다.
+        </p>
       </Wrap>
     </Container>
   );
@@ -97,7 +92,7 @@ export default SectionProject;
 
 const Container = styled.div`
   width: 100%;
-  height: 800px;
+  height: 900px;
   margin-top: 200px;
   @media only screen and (max-width: 768px) {
     width: 100%;
@@ -121,7 +116,7 @@ const TitleWrap = styled.div`
 `;
 
 const Title = styled.div`
-  width: 100%;
+  width: 50%;
   margin: 0 auto;
   text-align: center;
   display: flex;
@@ -181,20 +176,19 @@ const ContentWrap = styled.ul`
   padding-top: 50px;
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
+
   justify-content: space-between;
   @media only screen and (max-width: 768px) {
     flex-direction: column;
   }
 
   li {
-    width: 100%;
-    height: 500px;
+    width: 24%;
+    height: 470px;
     margin: 10px auto;
 
     box-sizing: border-box;
-    background-color: #222831;
-
+    background-color: #393e46;
     @media only screen and (max-width: 768px) {
       width: 100%;
       height: 300px;
@@ -204,36 +198,40 @@ const ContentWrap = styled.ul`
       width: 100%;
       height: 100%;
       transition: all 0.1s;
-      color: #fff;
-      display: flex;
-      justify-content: space-between;
+
+      color: #000;
     }
   }
 `;
 
-// const Content01 = styled.li`
-//   width: 100%;
-//   height: 100%;
-//   color: #fff;
-// `;
-// const Content02 = styled.li`
-//   width: 100%;
-//   height: 100%;
-// `;
-// const Content03 = styled.li`
-//   width: 100%;
-//   height: 100%;
-// `;
-// const Content04 = styled.li`
-//   width: 100%;
-//   height: 100%;
-// `;
+const Content01 = styled.li`
+  width: 100%;
+  height: 100%;
+  background-color: #4c4c6d;
+`;
+const Content02 = styled.li`
+  width: 100%;
+  height: 100%;
+  background-color: #1b9c85;
+`;
+const Content03 = styled.li`
+  width: 100%;
+  height: 100%;
+  background-color: #4c4c6d;
+`;
+const Content04 = styled.li`
+  width: 100%;
+  height: 100%;
+  background-color: #1b9c85;
+`;
 
 const ImgArea = styled.div`
-  width: 80%;
-  height: 100%;
-
-  background-color: #ddd;
+  width: 90%;
+  height: 50%;
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
   img {
     width: 100%;
     height: 100%;
@@ -251,13 +249,6 @@ const Text = styled.p`
   font-weight: 600;
 `;
 
-const TextWrap = styled.div`
-  display: flex;
-  justify-content: right;
-  width: 50%;
-  height: 100%;
-`;
-
 const HoverWrap = styled.div`
   display: flex;
 
@@ -265,15 +256,19 @@ const HoverWrap = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  background: #000;
-  p {
-    color: transparent;
-    &:hover {
-      color: #fff;
-      text-align: center;
-      background: #000;
-      font-weight: 600;
-      opacity: 0.8;
-    }
+  color: transparent;
+  &:hover {
+    color: #fff;
+    text-align: center;
+    background: #000;
+    font-weight: 600;
+    opacity: 0.8;
   }
+`;
+
+const TextWrap = styled.div`
+  display: flex;
+  justify-content: right;
+  width: 50%;
+  height: 100%;
 `;

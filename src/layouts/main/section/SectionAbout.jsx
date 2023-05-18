@@ -81,10 +81,10 @@ function SectionAbout() {
     };
   });
   return (
-    <Container id="skills">
+    <Container id="profile">
       <TitleWrap>
         <Title>
-          <h4>02</h4>
+          {/* <h4>02</h4> */}
           <h2>ABOUT ME</h2>
           <h3>
             We always think about what could be the best way for visual expressions. We try to explore as many avenues as possible for better visual representation.We always think about what could be
@@ -95,6 +95,7 @@ function SectionAbout() {
       <Wrap>
         <TextWrap>
           <Txt>
+            <h2>1</h2>
             <h3>PROFILE</h3>
             <ContentWrap>
               <h4>김아름</h4>
@@ -102,21 +103,15 @@ function SectionAbout() {
             </ContentWrap>
           </Txt>
           <Txt>
+            <h2>2</h2>
             <h3>EDUCATION</h3>
             <ContentWrap>
               <h4>2023.01.09 - 2023.02.28</h4>
               <Content> 프론트엔드 웹 개발자 양성 과정 - HTML5, CSS3, 자바스크립트(Java Script), 제이쿼리(JQuery), 리액트(React)</Content>
             </ContentWrap>
-            <ContentWrap>
-              <h4>2021.09.07 - 2022.01.25</h4>
-              <Content> (디지털디자인)UI/UX 반응형 웹디자인 & 웹퍼블리셔B 수료</Content>
-            </ContentWrap>
-            <ContentWrap>
-              <h4>2008.03.03 - 2014.08.14 </h4>
-              <Content>부산외국어대학교 한국어문학부 졸업 /부전공: 일본어문학</Content>
-            </ContentWrap>
           </Txt>
           <Txt>
+            <h2>3</h2>
             <h3>EDUCATION</h3>
             <ContentWrap>
               <h4>2023.01.09 - 2023.02.28</h4>
@@ -237,7 +232,7 @@ const Wrap = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 80%;
+  height: 70%;
   max-width: 75%;
   margin: 0 auto;
 
@@ -246,107 +241,6 @@ const Wrap = styled.div`
     height: 400px;
   }
 `;
-
-// const BgWrap = styled.ul`
-//   position: absolute;
-//   top: 20%;
-//   right: 0;
-//   width: 50%;
-//   height: 100%;
-//   color: ${({ theme }) => theme.colors.black_color};
-//   @media ${({ theme }) => theme.device.laptop} {
-//     position: absolute;
-//     /* top: 250px; */
-//     right: 0;
-//     width: 45%;
-//     height: 100%;
-//     transition: all 0.3s;
-//   }
-//   @media ${({ theme }) => theme.device.mobile} {
-//     display: none;
-//   }
-// `;
-
-// const Bg = styled.li`
-//   z-index: -1;
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   width: 100%;
-//   height: 100%;
-//   background: ${({ theme }) => theme.colors.black_color};
-//   color: ${({ theme }) => theme.colors.black_color};
-//   h4 {
-//     font-weight: 500;
-//     color: ${({ theme }) => theme.colors.black_color};
-//     font-size: 20px;
-//
-//     @media ${({ theme }) => theme.device.laptop} {
-//       font-size: 18px;
-//     }
-
-//     @media ${({ theme }) => theme.device.mobile} {
-//       color: #050505;
-//       font-size: 18px;
-//     }
-//   }
-//   h2 {
-//     width: 40%;
-//     font-family: "Montserrat";
-//     font-weight: 600;
-//     color: ${({ theme }) => theme.colors.white_color};
-//     font-size: 60px;
-//     margin-top: 20px;
-//     line-height: 120%;
-//     @media ${({ theme }) => theme.device.laptop} {
-//       width: 40%;
-//       font-family: "Montserrat";
-//       font-weight: 600;
-//       color: ${({ theme }) => theme.colors.white_color};
-//       font-size: 50px;
-//       margin-top: 20px;
-//       line-height: 120%;
-//     }
-
-//     @media ${({ theme }) => theme.device.mobile} {
-//       width: 100%;
-//       font-family: "Montserrat";
-//       font-weight: 600;
-//       color: ${({ theme }) => theme.colors.white_color};
-//       font-size: 50px;
-//       margin-top: 20px;
-//       line-height: 120%;
-//     }
-//   }
-//   h3 {
-//     width: 30%;
-//     font-family: "Montserrat";
-//     font-weight: 500;
-//     color: ${({ theme }) => theme.colors.white_color};
-//     font-size: 18px;
-//     line-height: 160%;
-//     margin-top: 40px;
-//     @media ${({ theme }) => theme.device.laptop} {
-//       width: 30%;
-//       font-family: "Montserrat";
-//       font-weight: 500;
-//       color: ${({ theme }) => theme.colors.white_color};
-//       font-size: 18px;
-//       line-height: 160%;
-//       margin-top: 40px;
-//     }
-
-//     @media ${({ theme }) => theme.device.mobile} {
-//       width: 100%;
-//       font-family: "Montserrat";
-//       font-weight: 400;
-//       color: ${({ theme }) => theme.colors.white_color};
-//       font-size: 18px;
-//       line-height: 160%;
-//       margin-top: 30px;
-//     }
-//   }
-// `;
 
 const TextWrap = styled.div`
   display: flex;
@@ -364,13 +258,22 @@ const Txt = styled.div`
     margin-right: 0;
   }
   color: ${({ theme }) => theme.colors.white_color};
-  h3 {
-    text-align: center;
-    font-weight: 500;
-    font-size: 1rem;
-    padding-top: 50px;
+  h2 {
+    width: 60%;
+
+    font-weight: 600;
     color: #000;
-    &::after {
+    font-size: 4rem;
+    margin-top: 20px;
+    line-height: 120%;
+  }
+  h3 {
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #000;
+    &::before {
       content: "";
       display: block;
       width: 100%;

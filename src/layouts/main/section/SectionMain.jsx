@@ -23,7 +23,7 @@ const Container = styled.div`
   top: 0;
   display: flex;
   align-items: center;
-  background: url() no-repeat center top / cover;
+
   color: ${({ theme }) => theme.colors.black_color};
   font-weight: ${({ theme }) => theme.fonts.weightSemiBold};
   margin: 0 auto;

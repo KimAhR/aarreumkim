@@ -84,10 +84,10 @@ export default Footer;
 
 const Container = styled.div`
   width: 100%;
-  height: 40vw;
-  margin: 0 auto;
-  position: relative;
-  background-color: #307672;
+  height: 800px;
+  margin-top: 200px;
+
+  background-color: #222831;
   @media ${({ theme }) => theme.device.laptop} {
     height: 690px;
     position: relative;
