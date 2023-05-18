@@ -223,8 +223,17 @@ const Wrap = styled.div`
     width: 60%;
     height: 80%;
     margin: 0 auto;
+    @media ${({ theme }) => theme.device.laptop} {
+      width: 80%;
+      height: 80%;
+    }
+    @media ${({ theme }) => theme.device.mobile} {
+      width: 100%;
+    }
   }
-
+  @media ${({ theme }) => theme.device.laptop} {
+    height: 500px;
+  }
   @media ${({ theme }) => theme.device.mobile} {
     height: 400px;
   }
@@ -263,7 +272,7 @@ const SlideList = styled.li`
     z-index: 1;
     position: absolute;
     top: 0;
-    left: 40%;
+    left: 0;
     width: 60%;
     height: 300px;
 
@@ -273,7 +282,7 @@ const SlideList = styled.li`
     z-index: 1;
     position: absolute;
     top: 0;
-    left: 0;
+    left: -50%;
     width: 100%;
 
     /* background: rosybrown; */
@@ -371,17 +380,19 @@ const OneWrap = styled.div`
   display: none;
   z-index: 2;
   width: 100%;
-
+  position: relative;
+  /* 
   @media ${({ theme }) => theme.device.mobile} {
     display: flex;
-    width: 50%;
-    margin: 50px auto;
+    width: 30%;
+
     justify-content: space-between;
-  }
+    left: 50%;
+    top: 50%;
+  } */
 `;
 
 const OneList = styled.div`
-  position: relative;
   margin-bottom: 15px;
 `;
 

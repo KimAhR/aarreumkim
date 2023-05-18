@@ -106,8 +106,8 @@ const Container = styled.div`
   margin-top: 300px;
   @media only screen and (max-width: 768px) {
     width: 100%;
-    height: 1500px;
-    margin-top: -100px;
+    height: 1800px;
+    margin-top: 50px;
   }
 `;
 
@@ -158,6 +158,13 @@ const Title = styled.div`
 
   @media ${({ theme }) => theme.device.laptop} {
     width: 100%;
+  }
+  @media ${({ theme }) => theme.device.mobile} {
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    justify-content: center;
+    align-items: center;
   }
   h3 {
     width: 80%;

@@ -179,6 +179,11 @@ const Title = styled.div`
   @media ${({ theme }) => theme.device.laptop} {
     width: 100%;
   }
+  @media ${({ theme }) => theme.device.mobile} {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   h3 {
     width: 80%;
 
@@ -238,6 +243,7 @@ const Wrap = styled.div`
 
   color: ${({ theme }) => theme.colors.black_color};
   @media ${({ theme }) => theme.device.mobile} {
+    margin: 200px auto;
     height: 400px;
   }
 `;
@@ -248,6 +254,9 @@ const TextWrap = styled.div`
   align-items: flex-start;
   width: 100%;
   margin-right: 10px;
+  @media ${({ theme }) => theme.device.mobile} {
+    justify-content: space-between;
+  }
 `;
 
 const Txt = styled.div`
@@ -266,6 +275,11 @@ const Txt = styled.div`
     font-size: 4rem;
     margin-top: 20px;
     line-height: 120%;
+    @media ${({ theme }) => theme.device.mobile} {
+      text-align: center;
+      margin: 0 auto;
+      font-size: 2rem;
+    }
   }
   h3 {
     text-align: left;
