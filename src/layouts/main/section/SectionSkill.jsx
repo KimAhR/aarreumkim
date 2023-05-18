@@ -84,8 +84,7 @@ const SectionSkill = () => {
     <Container id="about">
       <TitleWrap>
         <Title>
-          <h4>04</h4>
-          <h2>word express me</h2>
+          <h1>KIM AH REUM PORTFOLIO</h1>
         </Title>
       </TitleWrap>
       <Wrap>
@@ -121,7 +120,8 @@ const SectionSkill = () => {
               ))}
           </SlideWrap>
         </Slide>
-        <BtnWrap>
+        <img src={process.env.PUBLIC_URL + "/img/bg.jpg"} alt="img" />
+        {/* <BtnWrap>
           {data.map((item) => (
             <BtnList key={item.id} className={index === item.id ? SlideWrap.active : null} onClick={() => setIndex(item.id)} style={{ transform: `translate3d(${index}%)` }}>
               <BtnTxt>{item.title}</BtnTxt>
@@ -130,7 +130,7 @@ const SectionSkill = () => {
               ))}
             </BtnList>
           ))}
-        </BtnWrap>
+        </BtnWrap> */}
       </Wrap>
     </Container>
   );
@@ -140,14 +140,14 @@ export default SectionSkill;
 const Container = styled.div`
   position: relative;
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.white_color};
+  background-color: ${({ theme }) => theme.colors.black_color};
 `;
 const TitleWrap = styled.div`
   z-index: 2;
 
   width: 100%;
-  max-width: 74%;
-  margin: 0 auto;
+
+  text-align: center;
   padding-top: 150px;
   display: flex;
   justify-content: space-between;
@@ -176,40 +176,24 @@ const TitleWrap = styled.div`
 `;
 
 const Title = styled.div`
-  width: 50%;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
 
   @media ${({ theme }) => theme.device.laptop} {
-    width: 100%;
   }
-  h4 {
-    font-family: "Montserrat";
-    font-weight: 500;
-    color: #000;
-    font-size: 20px;
-    @media ${({ theme }) => theme.device.mobile} {
-      text-align: center;
-      font-family: "Montserrat";
-      font-weight: 500;
-      color: #000;
-      font-size: 18px;
-    }
-  }
-  h2 {
+
+  h1 {
     width: 100%;
-    font-family: "Montserrat";
+
     font-weight: 600;
-    color: #000;
-    font-size: 60px;
-    margin-top: 20px;
-    line-height: 120%;
+    color: #fff;
+    font-size: 6rem;
+    margin-bottom: 30px;
 
     @media ${({ theme }) => theme.device.tablet} {
       width: 100%;
       font-family: "Montserrat";
       font-weight: 600;
-      color: #000;
+      color: #fff;
       font-size: 50px;
       margin-top: 20px;
       line-height: 120%;
@@ -219,7 +203,7 @@ const Title = styled.div`
       width: 100%;
       font-family: "Montserrat";
       font-weight: 700;
-      color: #000;
+      color: #fff;
       font-size: 50px;
       margin-top: 20px;
       line-height: 120%;
@@ -228,15 +212,18 @@ const Title = styled.div`
 `;
 
 const Wrap = styled.div`
-  z-index: 1;
-  position: relative;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 870px;
+  max-width: 75%;
+  margin: 0 auto;
+  height: 800px;
   display: flex;
   justify-content: space-around;
   /* background: #fff; */
+  img {
+    width: 60%;
+    height: 80%;
+    margin: 0 auto;
+  }
 
   @media ${({ theme }) => theme.device.mobile} {
     height: 400px;
@@ -247,6 +234,7 @@ const Slide = styled.div`
   z-index: 1;
   width: 50%;
   /* height: 969px; */
+  margin: 0 auto;
 `;
 
 const SlideWrap = styled.ul`
@@ -267,7 +255,7 @@ const SlideWrap = styled.ul`
 const SlideList = styled.li`
   position: absolute;
   top: 0;
-  left: 30%;
+  left: 0;
   width: 50%;
   height: 300px;
   /* background: #fff; */
@@ -295,14 +283,15 @@ const SlideList = styled.li`
 
 const SlideTxt = styled.div`
   position: relative;
-  top: -50%;
+  top: 25%;
+  left: 50%;
   display: inline-block;
 
   a {
     z-index: 2;
     position: relative;
     font-weight: 700;
-    color: #000;
+    color: #fff;
     font-size: 150px;
     transition: all 0.4s;
     @media ${({ theme }) => theme.device.laptop} {
@@ -310,7 +299,7 @@ const SlideTxt = styled.div`
       z-index: 2;
 
       font-weight: 700;
-      color: #000;
+      color: #fff;
       font-size: 80px;
     }
     @media ${({ theme }) => theme.device.mobile} {
@@ -318,7 +307,7 @@ const SlideTxt = styled.div`
       z-index: 2;
 
       font-weight: 700;
-      color: #000;
+      color: #fff;
       font-size: 70px;
     }
 
@@ -373,7 +362,7 @@ const SlideTxt = styled.div`
   h4 {
     margin-top: 20px;
     font-weight: 500;
-    color: #000;
+    color: #fff;
     font-size: 26px;
   }
 `;
@@ -435,7 +424,7 @@ const BtnList = styled.li`
     margin: 0 2px;
   }
   &:hover {
-    color: #000;
+    color: #fff;
     &::after {
       content: "";
       display: block;
@@ -483,7 +472,7 @@ const BtnTxt = styled.div`
   color: #8e8f9a;
   font-size: 18px;
   &:hover {
-    color: #000;
+    color: #fff;
   }
 `;
 

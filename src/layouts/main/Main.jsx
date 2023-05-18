@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
-// import SectionAbout from "./section/SectionAbout";
-import SectionMain from "./section/SectionMain";
+import SectionAbout from "./section/SectionAbout";
+// import SectionMain from "./section/SectionMain";
 import SectionDevelop from "./section/SectionDevelop";
-import Animation from "./section/Animation";
+// import Animation from "./section/Animation";
 import SectionProject from "./section/SectionProject";
 
 import SectionSkill from "./section/SectionSkill";
-import SectionProfile from "./section/SectionProfile";
+// import SectionProfile from "./section/SectionProfile";
 function Main() {
   const [ScrollY, setScrollY] = useState(0);
   const [BtnStatus, setBtnStatus] = useState(false); // 버튼 상태
@@ -47,14 +47,17 @@ function Main() {
     <Container id="main">
       <Wrap>{BtnStatus && <TopBtn onClick={handleTop}>TOP</TopBtn>}</Wrap>
 
-      <SectionMain />
-      <SectionProfile />
-      {/* <SectionSkill /> */}
+      {/* <SectionMain /> */}
+
+      <SectionSkill />
       {/* <SectionSkills /> */}
-      {/* <SectionAbout /> */}
-      <SectionDevelop />
-      <Animation />
+      <SectionAbout />
+
+      {/* <SectionDevelop /> */}
       <SectionProject />
+      {/* <SectionProfile /> */}
+      {/* <Animation /> */}
+      <SectionDevelop />
       {/* <SectionSkill /> */}
     </Container>
   );
@@ -65,6 +68,7 @@ export default Main;
 const Container = styled.div`
   width: 100%;
   height: 100%;
+
   /* position: relative;
   background: ${({ theme }) => theme.colors.white_color}; */
 `;

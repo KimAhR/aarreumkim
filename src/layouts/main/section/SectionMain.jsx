@@ -2,12 +2,11 @@ import styled from "styled-components";
 
 function SectionMain() {
   return (
-    <Container>
+    <Container style={{ backgroundImage: "url(/assets/bg.jpg)" }}>
       <Wrap>
-        <h2>PORTFOLIO</h2>
         <div>
-          <p>KIM AH REUM</p>
-          <span>FRONT-END DEVELOPER</span>
+          <p>KIM AH REUM PORTFOLIO</p>
+          <img src={process.env.PUBLIC_URL + "/img/bg.jpg"} alt="img" />
         </div>
       </Wrap>
     </Container>
@@ -17,16 +16,18 @@ function SectionMain() {
 export default SectionMain;
 
 const Container = styled.div`
+  width: 100%;
+  height: 1300px;
   z-index: 1;
   position: relative;
-  width: 100%;
-  height: 1000px;
+  top: 0;
   display: flex;
   align-items: center;
-
-  color: ${({ theme }) => theme.colors.white_color};
+  background: url() no-repeat center top / cover;
+  color: ${({ theme }) => theme.colors.black_color};
   font-weight: ${({ theme }) => theme.fonts.weightSemiBold};
   margin: 0 auto;
+
   @media ${({ theme }) => theme.device.laptop} {
     width: 100%;
     height: 800px;
@@ -45,28 +46,26 @@ const Wrap = styled.div`
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
-  background: url(img/bg.jpg) center / contain;
+
   @media ${({ theme }) => theme.device.laptop} {
   }
-  h2 {
-    font-size: ${({ theme }) => theme.fonts.fontLarge};
-    background-color: ${({ theme }) => theme.colors.main_color};
 
-    font-weight: ${({ theme }) => theme.fonts.weightSemiBold};
-    @media ${({ theme }) => theme.device.laptop} {
-      /* position: absolute; */
-      font-size: 1.75rem;
-
-      font-weight: 600;
-    }
-    @media ${({ theme }) => theme.device.tablet} {
-      font-size: ${({ theme }) => theme.fonts.fontSmall};
-      background-color: ${({ theme }) => theme.colors.main_color};
-
-      font-weight: ${({ theme }) => theme.fonts.weightSemiBold};
-    }
-  }
   div {
+    margin: 0 auto;
+    background: url("/img/bg.jpg") center / cover no-repeat;
+    p {
+      margin: 50px auto;
+      font-size: 5rem;
+      @media ${({ theme }) => theme.device.laptop} {
+        font-size: 3rem;
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
     font-size: 6rem;
     @media ${({ theme }) => theme.device.laptop} {
       font-weight: 600;

@@ -2,10 +2,10 @@ const colors = {
   main_color: "#1A3C40",
   blue_color: "#0066ff",
   gray_color: "#FEFCF3",
-  white_color: "#F4F9F4",
+  white_color: "#fff",
   green_color: "#144D53",
   yellow_color: "#FFD460",
-  black_color: "#1A3C40",
+  black_color: "#222831",
   beige_color: "#307672",
 };
 
