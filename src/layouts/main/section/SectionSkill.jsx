@@ -1,127 +1,127 @@
-import { useState, useRef, useEffect } from "react";
-import styled from "styled-components";
+import { useState, useRef, useEffect } from 'react';
+import styled from 'styled-components';
 
 const SectionSkill = () => {
-  const data = [
-    {
-      id: 0,
-      title: "sociable",
-      content: "sociable",
-      contents: "사교적인",
-      dots: "",
-    },
-    {
-      id: 1,
-      title: "enterprising",
-      content: "enterprising",
-      contents: "진취력있는",
-      dots: "",
-    },
-    {
-      id: 2,
-      title: "shrewd",
-      content: "shrewd",
-      contents: "catch on fast",
-      dots: "",
-    },
-    {
-      id: 3,
-      title: "sociable",
-      content: "sociable",
-      contents: "사교적인",
-      dots: "",
-    },
-    {
-      id: 4,
-      title: "considerate",
-      content: "considerate",
-      contents: "배려하는",
-      dots: "",
-    },
-    {
-      id: 5,
-      title: "hardworking",
-      content: "hardworking",
-      contents: "성실한",
-      dots: "",
-    },
-    {
-      id: 6,
-      title: "figma",
-      content: "figma",
-      contents: "김아름",
-      dots: "",
-    },
-    {
-      id: 7,
-      title: "responsibility",
-      content: "responsibility",
-      contents: "책임감",
-      dots: "",
-    },
-  ];
+	const data = [
+		{
+			id: 0,
+			title: 'sociable',
+			content: 'sociable',
+			contents: '사교적인',
+			dots: '',
+		},
+		{
+			id: 1,
+			title: 'enterprising',
+			content: 'enterprising',
+			contents: '진취력있는',
+			dots: '',
+		},
+		{
+			id: 2,
+			title: 'shrewd',
+			content: 'shrewd',
+			contents: 'catch on fast',
+			dots: '',
+		},
+		{
+			id: 3,
+			title: 'sociable',
+			content: 'sociable',
+			contents: '사교적인',
+			dots: '',
+		},
+		{
+			id: 4,
+			title: 'considerate',
+			content: 'considerate',
+			contents: '배려하는',
+			dots: '',
+		},
+		{
+			id: 5,
+			title: 'hardworking',
+			content: 'hardworking',
+			contents: '성실한',
+			dots: '',
+		},
+		{
+			id: 6,
+			title: 'figma',
+			content: 'figma',
+			contents: '김아름',
+			dots: '',
+		},
+		{
+			id: 7,
+			title: 'responsibility',
+			content: 'responsibility',
+			contents: '책임감',
+			dots: '',
+		},
+	];
 
-  const delay = 2500;
-  const [index, setIndex] = useState(0);
+	const delay = 2500;
+	const [index, setIndex] = useState(0);
 
-  const timeoutRef = useRef(null);
+	const timeoutRef = useRef(null);
 
-  function resetTimeout() {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-  }
+	function resetTimeout() {
+		if (timeoutRef.current) {
+			clearTimeout(timeoutRef.current);
+		}
+	}
 
-  useEffect(() => {
-    resetTimeout();
-    timeoutRef.current = setTimeout(() => setIndex((prevIndex) => (prevIndex === data.length - 1 ? 0 : prevIndex + 1)), delay);
+	useEffect(() => {
+		resetTimeout();
+		timeoutRef.current = setTimeout(() => setIndex((prevIndex) => (prevIndex === data.length - 1 ? 0 : prevIndex + 1)), delay);
 
-    return () => {
-      resetTimeout();
-    };
-  });
-  return (
-    <Container id="about">
-      <TitleWrap>
-        <Title>
-          <h1>KIM AH REUM PORTFOLIO</h1>
-        </Title>
-      </TitleWrap>
-      <Wrap>
-        <Slide>
-          <SlideWrap>
-            {data
-              .filter((item) => index === item.id)
-              .map((item) => (
-                <SlideList>
-                  <SlideTxt>
-                    <a href="#main">{item.content}</a>
-                    <span></span>
-                    <h4>{item.contents}</h4>
-                  </SlideTxt>
-                  <OneWrap>
-                    {data.map((item) => (
-                      <OneList
-                        key={item.id}
-                        className={index === item.id ? SlideWrap.active : null}
-                        onClick={() => setIndex(item.id)}
-                        style={{ transform: `translate3d(${index}%)`, transition: "all 3s" }}
-                      >
-                        <One key={item.id} className={index === item.id ? SlideWrap.active : null} style={index === item.id ? { background: "#000" } : { background: "#8e8f9a" }}>
-                          {item.dots}
-                        </One>
-                        {data.map((index) => (
-                          <div key={index}></div>
-                        ))}
-                      </OneList>
-                    ))}
-                  </OneWrap>
-                </SlideList>
-              ))}
-          </SlideWrap>
-        </Slide>
-        <img src={process.env.PUBLIC_URL + "/img/bg.jpg"} alt="img" />
-        {/* <BtnWrap>
+		return () => {
+			resetTimeout();
+		};
+	});
+	return (
+		<Container id="about">
+			<TitleWrap>
+				<Title>
+					<h1>KIM AH REUM PORTFOLIO</h1>
+				</Title>
+			</TitleWrap>
+			<Wrap>
+				<Slide>
+					<SlideWrap>
+						{data
+							.filter((item) => index === item.id)
+							.map((item) => (
+								<SlideList>
+									<SlideTxt>
+										<a href="#main">{item.content}</a>
+										<span></span>
+										<h4>{item.contents}</h4>
+									</SlideTxt>
+									<OneWrap>
+										{data.map((item) => (
+											<OneList
+												key={item.id}
+												className={index === item.id ? SlideWrap.active : null}
+												onClick={() => setIndex(item.id)}
+												style={{ transform: `translate3d(${index}%)`, transition: 'all 3s' }}
+											>
+												<One key={item.id} className={index === item.id ? SlideWrap.active : null} style={index === item.id ? { background: '#000' } : { background: '#8e8f9a' }}>
+													{item.dots}
+												</One>
+												{data.map((index) => (
+													<div key={index}></div>
+												))}
+											</OneList>
+										))}
+									</OneWrap>
+								</SlideList>
+							))}
+					</SlideWrap>
+				</Slide>
+				<img src={process.env.PUBLIC_URL + '/img/bg.jpg'} alt="img" />
+				{/* <BtnWrap>
           {data.map((item) => (
             <BtnList key={item.id} className={index === item.id ? SlideWrap.active : null} onClick={() => setIndex(item.id)} style={{ transform: `translate3d(${index}%)` }}>
               <BtnTxt>{item.title}</BtnTxt>
@@ -131,226 +131,226 @@ const SectionSkill = () => {
             </BtnList>
           ))}
         </BtnWrap> */}
-      </Wrap>
-    </Container>
-  );
+			</Wrap>
+		</Container>
+	);
 };
 export default SectionSkill;
 
 const Container = styled.div`
-  position: relative;
-  width: 100%;
-  background-color: ${({ theme }) => theme.colors.black_color};
+	position: relative;
+	width: 100%;
+	background-color: ${({ theme }) => theme.colors.black_color};
 `;
 const TitleWrap = styled.div`
-  z-index: 2;
+	z-index: 2;
 
-  width: 100%;
+	width: 100%;
 
-  text-align: center;
-  padding-top: 150px;
-  display: flex;
-  justify-content: space-between;
+	text-align: center;
+	padding-top: 50px;
+	display: flex;
+	justify-content: space-between;
 
-  @media ${({ theme }) => theme.device.laptop} {
-    z-index: 2;
-    position: relative;
+	@media ${({ theme }) => theme.device.laptop} {
+		z-index: 2;
+		position: relative;
 
-    width: 100%;
-    max-width: 80%;
-    margin: 0 auto;
-    padding-top: 150px;
-    display: flex;
-    justify-content: space-between;
-  }
-  @media ${({ theme }) => theme.device.tablet} {
-    width: 100%;
-    max-width: 80%;
-    display: flex;
-    justify-content: space-between;
-  }
-  @media ${({ theme }) => theme.device.mobile} {
-    display: flex;
-    flex-direction: column;
-  }
+		width: 100%;
+		max-width: 80%;
+		margin: 0 auto;
+		padding-top: 150px;
+		display: flex;
+		justify-content: space-between;
+	}
+	@media ${({ theme }) => theme.device.tablet} {
+		width: 100%;
+		max-width: 80%;
+		display: flex;
+		justify-content: space-between;
+	}
+	@media ${({ theme }) => theme.device.mobile} {
+		display: flex;
+		flex-direction: column;
+	}
 `;
 
 const Title = styled.div`
-  width: 100%;
+	width: 100%;
 
-  @media ${({ theme }) => theme.device.laptop} {
-  }
+	@media ${({ theme }) => theme.device.laptop} {
+	}
 
-  h1 {
-    width: 100%;
+	h1 {
+		width: 100%;
 
-    font-weight: 600;
-    color: #fff;
-    font-size: 6rem;
-    margin: 100px auto;
+		font-weight: 600;
+		color: #fff;
+		font-size: 6rem;
+		margin: 100px auto;
 
-    @media ${({ theme }) => theme.device.tablet} {
-      width: 100%;
-      font-family: "Montserrat";
-      font-weight: 600;
-      color: #fff;
-      font-size: 50px;
-      margin-top: 20px;
-      line-height: 120%;
-    }
-    @media ${({ theme }) => theme.device.mobile} {
-      text-align: center;
-      width: 100%;
-      font-family: "Montserrat";
-      font-weight: 700;
-      color: #fff;
-      font-size: 50px;
-      margin-top: 20px;
-      line-height: 120%;
-    }
-  }
+		@media ${({ theme }) => theme.device.tablet} {
+			width: 100%;
+			font-family: 'Montserrat';
+			font-weight: 600;
+			color: #fff;
+			font-size: 50px;
+			margin-top: 20px;
+			line-height: 120%;
+		}
+		@media ${({ theme }) => theme.device.mobile} {
+			text-align: center;
+			width: 100%;
+			font-family: 'Montserrat';
+			font-weight: 700;
+			color: #fff;
+			font-size: 50px;
+			margin-top: 20px;
+			line-height: 120%;
+		}
+	}
 `;
 
 const Wrap = styled.div`
-  width: 100%;
-  max-width: 75%;
-  margin: 0 auto;
-  height: 800px;
-  display: flex;
-  justify-content: space-around;
-  /* background: #fff; */
-  img {
-    width: 60%;
-    height: 80%;
-    margin: 0 auto;
-    @media ${({ theme }) => theme.device.laptop} {
-      width: 80%;
-      height: 80%;
-    }
-    @media ${({ theme }) => theme.device.mobile} {
-      width: 100%;
-    }
-  }
-  @media ${({ theme }) => theme.device.laptop} {
-    height: 500px;
-  }
-  @media ${({ theme }) => theme.device.mobile} {
-    height: 400px;
-  }
+	width: 100%;
+	max-width: 75%;
+	margin: 0 auto;
+	height: 600px;
+	display: flex;
+	justify-content: space-around;
+	/* background: #fff; */
+	img {
+		width: 60%;
+		height: 80%;
+		margin: 0 auto;
+		@media ${({ theme }) => theme.device.laptop} {
+			width: 80%;
+			height: 80%;
+		}
+		@media ${({ theme }) => theme.device.mobile} {
+			width: 100%;
+		}
+	}
+	@media ${({ theme }) => theme.device.laptop} {
+		height: 500px;
+	}
+	@media ${({ theme }) => theme.device.mobile} {
+		height: 400px;
+	}
 `;
 
 const Slide = styled.div`
-  z-index: 1;
-  width: 50%;
-  /* height: 969px; */
-  margin: 0 auto;
+	z-index: 1;
+	width: 50%;
+	/* height: 969px; */
+	margin: 0 auto;
 `;
 
 const SlideWrap = styled.ul`
-  position: relative;
-  width: 80%;
-  margin: 30% auto;
-  /* top: 150px; */
-  @media ${({ theme }) => theme.device.mobile} {
-    z-index: 2;
-    position: absolute;
-    top: 150px;
-    left: 0;
-    text-align: center;
-    width: 100%;
-  }
+	position: relative;
+	width: 80%;
+	margin: 30% auto;
+	/* top: 150px; */
+	@media ${({ theme }) => theme.device.mobile} {
+		z-index: 2;
+		position: absolute;
+		top: 150px;
+		left: 0;
+		text-align: center;
+		width: 100%;
+	}
 `;
 
 const SlideList = styled.li`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 300px;
-  /* background: #fff; */
-  @media ${({ theme }) => theme.device.laptop} {
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 60%;
-    height: 300px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 300px;
+	/* background: #fff; */
+	@media ${({ theme }) => theme.device.laptop} {
+		z-index: 1;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 60%;
+		height: 300px;
 
-    transition: all 0.3s;
-  }
-  @media ${({ theme }) => theme.device.mobile} {
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    left: -50%;
-    width: 100%;
+		transition: all 0.3s;
+	}
+	@media ${({ theme }) => theme.device.mobile} {
+		z-index: 1;
+		position: absolute;
+		top: 0;
+		left: -50%;
+		width: 100%;
 
-    /* background: rosybrown; */
-    text-align: center;
-  }
+		/* background: rosybrown; */
+		text-align: center;
+	}
 `;
 
 const SlideTxt = styled.div`
-  position: relative;
-  top: 25%;
-  left: 50%;
-  display: inline-block;
+	position: relative;
+	top: 25%;
+	left: 50%;
+	display: inline-block;
 
-  a {
-    z-index: 2;
-    position: relative;
-    font-weight: 700;
-    color: #fff;
-    font-size: 5rem;
-    transition: all 0.4s;
-    @media ${({ theme }) => theme.device.laptop} {
-      display: inline-block;
-      z-index: 2;
+	a {
+		z-index: 2;
+		position: relative;
+		font-weight: 700;
+		color: #fff;
+		font-size: 5rem;
+		transition: all 0.4s;
+		@media ${({ theme }) => theme.device.laptop} {
+			display: inline-block;
+			z-index: 2;
 
-      font-weight: 700;
-      color: #fff;
-      font-size: 80px;
-    }
-    @media ${({ theme }) => theme.device.mobile} {
-      display: inline-block;
-      z-index: 2;
+			font-weight: 700;
+			color: #fff;
+			font-size: 80px;
+		}
+		@media ${({ theme }) => theme.device.mobile} {
+			display: inline-block;
+			z-index: 2;
 
-      font-weight: 700;
-      color: #fff;
-      font-size: 70px;
-    }
+			font-weight: 700;
+			color: #fff;
+			font-size: 70px;
+		}
 
-    &::before {
-      z-index: -1;
-      content: "";
-      position: absolute;
-      left: 0%;
-      top: 70%;
-      width: 100%;
-      height: 20px;
-      box-shadow: inset 0px 0px 0px #0066ff;
-      background: #5053582c;
+		&::before {
+			z-index: -1;
+			content: '';
+			position: absolute;
+			left: 0%;
+			top: 70%;
+			width: 100%;
+			height: 20px;
+			box-shadow: inset 0px 0px 0px #0066ff;
+			background: #5053582c;
 
-      transition: all 0.4s cubic-bezier(0.5, 0.24, 0, 1);
-    }
-    &:hover {
-      &::before {
-        box-shadow: inset 1000px 0px 0px #0066ff;
-      }
-    }
-  }
+			transition: all 0.4s cubic-bezier(0.5, 0.24, 0, 1);
+		}
+		&:hover {
+			&::before {
+				box-shadow: inset 1000px 0px 0px #0066ff;
+			}
+		}
+	}
 
-  span {
-    z-index: 1;
-    /* bottom: 0;
+	span {
+		z-index: 1;
+		/* bottom: 0;
     left: 100%;
     width: 100%;
     height: 20px; */
 
-    transition: all 0.7s;
-    position: absolute;
+		transition: all 0.7s;
+		position: absolute;
 
-    /* z-index: 1;
+		/* z-index: 1;
     display: inline-block;
     position: absolute;
     bottom: 50px;
@@ -361,27 +361,27 @@ const SlideTxt = styled.div`
     transition: all 0.7s;
     overflow: hidden; */
 
-    &:hover {
-      &::before {
-        box-shadow: inset 600px 0px 0px #0066ff;
-      }
-    }
-  }
+		&:hover {
+			&::before {
+				box-shadow: inset 600px 0px 0px #0066ff;
+			}
+		}
+	}
 
-  h4 {
-    margin-top: 20px;
-    font-weight: 500;
-    color: #fff;
-    font-size: 26px;
-  }
+	h4 {
+		margin-top: 20px;
+		font-weight: 500;
+		color: #fff;
+		font-size: 26px;
+	}
 `;
 
 const OneWrap = styled.div`
-  display: none;
-  z-index: 2;
-  width: 100%;
-  position: relative;
-  /* 
+	display: none;
+	z-index: 2;
+	width: 100%;
+	position: relative;
+	/* 
   @media ${({ theme }) => theme.device.mobile} {
     display: flex;
     width: 30%;
@@ -393,98 +393,98 @@ const OneWrap = styled.div`
 `;
 
 const OneList = styled.div`
-  margin-bottom: 15px;
+	margin-bottom: 15px;
 `;
 
 const One = styled.div`
-  display: inline-block;
+	display: inline-block;
 
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #3f72af;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: #3f72af;
 
-  margin-bottom: 1px;
+	margin-bottom: 1px;
 `;
 
 const BtnWrap = styled.ul`
-  z-index: 2;
-  position: absolute;
-  top: 35%;
-  left: 15%;
-  @media ${({ theme }) => theme.device.laptop} {
-    left: 20%;
-    transition: all 0.3s;
-  }
-  @media ${({ theme }) => theme.device.mobile} {
-    z-index: 2;
-    position: absolute;
-    top: 150px;
-    left: 0;
-    text-align: center;
-    width: 100%;
-  }
+	z-index: 2;
+	position: absolute;
+	top: 35%;
+	left: 15%;
+	@media ${({ theme }) => theme.device.laptop} {
+		left: 20%;
+		transition: all 0.3s;
+	}
+	@media ${({ theme }) => theme.device.mobile} {
+		z-index: 2;
+		position: absolute;
+		top: 150px;
+		left: 0;
+		text-align: center;
+		width: 100%;
+	}
 `;
 
 const BtnList = styled.li`
-  position: relative;
-  margin-bottom: 15px;
-  @media ${({ theme }) => theme.device.mobile} {
-    position: relative;
-    display: inline-block;
-    margin: 0 2px;
-  }
-  &:hover {
-    color: #fff;
-    &::after {
-      content: "";
-      display: block;
-      width: 34px;
-      height: 1px;
-      background: #8e8f9a;
+	position: relative;
+	margin-bottom: 15px;
+	@media ${({ theme }) => theme.device.mobile} {
+		position: relative;
+		display: inline-block;
+		margin: 0 2px;
+	}
+	&:hover {
+		color: #fff;
+		&::after {
+			content: '';
+			display: block;
+			width: 34px;
+			height: 1px;
+			background: #8e8f9a;
 
-      position: absolute;
+			position: absolute;
 
-      top: 50%;
-      left: -15%;
+			top: 50%;
+			left: -15%;
 
-      transition: all 0.3s ease;
-    }
-  }
-  div {
-    display: inline-block;
-  }
-  a {
-    z-index: 3;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    @media ${({ theme }) => theme.device.laptop} {
-      font-size: 80px;
-    }
-  }
-  div {
-    width: 34px;
-    height: 1px;
-    background: transparent;
-    margin-bottom: 6px;
-    transition: all 0.3s;
-    @media ${({ theme }) => theme.device.mobile} {
-      display: none;
-    }
-  }
+			transition: all 0.3s ease;
+		}
+	}
+	div {
+		display: inline-block;
+	}
+	a {
+		z-index: 3;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		@media ${({ theme }) => theme.device.laptop} {
+			font-size: 80px;
+		}
+	}
+	div {
+		width: 34px;
+		height: 1px;
+		background: transparent;
+		margin-bottom: 6px;
+		transition: all 0.3s;
+		@media ${({ theme }) => theme.device.mobile} {
+			display: none;
+		}
+	}
 `;
 
 const BtnTxt = styled.div`
-  font-weight: 500;
-  color: #8e8f9a;
-  font-size: 18px;
-  &:hover {
-    color: #fff;
-  }
+	font-weight: 500;
+	color: #8e8f9a;
+	font-size: 18px;
+	&:hover {
+		color: #fff;
+	}
 `;
 
 // const BgWrap = styled.div`
