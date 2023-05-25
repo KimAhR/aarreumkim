@@ -17,7 +17,7 @@ export default SectionMain;
 
 const Container = styled.div`
 	width: 100%;
-	height: 600px;
+	height: 700px;
 	z-index: 1;
 	position: relative;
 	top: 0;

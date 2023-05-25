@@ -84,13 +84,19 @@ export default Footer;
 
 const Container = styled.div`
 	width: 100%;
-	height: 600px;
-	margin-top: -50px;
+	height: 800px;
+	margin-top: 200px;
 
 	background-color: #222831;
 	@media ${({ theme }) => theme.device.laptop} {
 		height: 690px;
 		position: relative;
+		margin-top: 500px;
+	}
+	@media ${({ theme }) => theme.device.tablet} {
+		height: 500px;
+		position: relative;
+		margin-top: 600px;
 	}
 `;
 
@@ -175,7 +181,7 @@ const ContactWrap = styled.div`
 	max-width: 74%;
 	margin: 0 auto;
 	bottom: 10%;
-	left: 40%;
+	left: 43%;
 	@media ${({ theme }) => theme.device.mobile} {
 		bottom: 5%;
 		left: 25%;
@@ -187,10 +193,10 @@ const Contact = styled.div`
 	justify-content: flex-start;
 
 	h3 {
-		text-align: left;
+		text-align: center;
 		font-weight: 600;
 		font-size: 1rem;
-		color: ${({ theme }) => theme.colors.black_color};
+		color: ${({ theme }) => theme.colors.white_color};
 		width: 5%;
 		@media ${({ theme }) => theme.device.laptop} {
 			width: 10%;

@@ -5,57 +5,44 @@ const SectionSkill = () => {
 	const data = [
 		{
 			id: 0,
-			title: 'sociable',
-			content: 'sociable',
-			contents: '사교적인',
+			title: 'FRIENDLY',
+			content: 'FRIENDLY',
+			contents: '다정한',
 			dots: '',
 		},
 		{
 			id: 1,
-			title: 'enterprising',
-			content: 'enterprising',
-			contents: '진취력있는',
+			title: 'HONEST',
+			content: 'HONEST',
+			contents: '솔직한',
 			dots: '',
 		},
+
 		{
 			id: 2,
-			title: 'shrewd',
-			content: 'shrewd',
-			contents: 'catch on fast',
+			title: 'OPTIMISTIC',
+			content: 'OPTIMISTIC',
+			contents: '낙천적인',
 			dots: '',
 		},
 		{
 			id: 3,
-			title: 'sociable',
-			content: 'sociable',
-			contents: '사교적인',
-			dots: '',
-		},
-		{
-			id: 4,
-			title: 'considerate',
-			content: 'considerate',
+			title: 'CONSIDERATE',
+			content: 'CONSIDERATE',
 			contents: '배려하는',
 			dots: '',
 		},
 		{
+			id: 4,
+			title: 'SENSIBLE',
+			content: 'SENSIBLE',
+			contents: '분별있는',
+			dots: '',
+		},
+		{
 			id: 5,
-			title: 'hardworking',
-			content: 'hardworking',
-			contents: '성실한',
-			dots: '',
-		},
-		{
-			id: 6,
-			title: 'figma',
-			content: 'figma',
-			contents: '김아름',
-			dots: '',
-		},
-		{
-			id: 7,
-			title: 'responsibility',
-			content: 'responsibility',
+			title: 'RESPONSIBILITY',
+			content: 'RESPONSIBILITY',
 			contents: '책임감',
 			dots: '',
 		},
@@ -97,7 +84,7 @@ const SectionSkill = () => {
 									<SlideTxt>
 										<a href="#main">{item.content}</a>
 										<span></span>
-										<h4>{item.contents}</h4>
+										{/* <h4>{item.contents}</h4> */}
 									</SlideTxt>
 									<OneWrap>
 										{data.map((item) => (
@@ -191,7 +178,7 @@ const Title = styled.div`
 
 		@media ${({ theme }) => theme.device.tablet} {
 			width: 100%;
-			font-family: 'Montserrat';
+
 			font-weight: 600;
 			color: #fff;
 			font-size: 50px;
@@ -201,7 +188,7 @@ const Title = styled.div`
 		@media ${({ theme }) => theme.device.mobile} {
 			text-align: center;
 			width: 100%;
-			font-family: 'Montserrat';
+
 			font-weight: 700;
 			color: #fff;
 			font-size: 50px;
@@ -215,7 +202,7 @@ const Wrap = styled.div`
 	width: 100%;
 	max-width: 75%;
 	margin: 0 auto;
-	height: 600px;
+	height: 700px;
 	display: flex;
 	justify-content: space-around;
 	/* background: #fff; */
@@ -292,7 +279,7 @@ const SlideList = styled.li`
 
 const SlideTxt = styled.div`
 	position: relative;
-	top: 25%;
+	top: 0;
 	left: 50%;
 	display: inline-block;
 
@@ -301,7 +288,7 @@ const SlideTxt = styled.div`
 		position: relative;
 		font-weight: 700;
 		color: #fff;
-		font-size: 5rem;
+		font-size: 6rem;
 		transition: all 0.4s;
 		@media ${({ theme }) => theme.device.laptop} {
 			display: inline-block;
@@ -309,7 +296,7 @@ const SlideTxt = styled.div`
 
 			font-weight: 700;
 			color: #fff;
-			font-size: 80px;
+			font-size: 5rem;
 		}
 		@media ${({ theme }) => theme.device.mobile} {
 			display: inline-block;
@@ -317,7 +304,7 @@ const SlideTxt = styled.div`
 
 			font-weight: 700;
 			color: #fff;
-			font-size: 70px;
+			font-size: 3.25rem;
 		}
 
 		&::before {

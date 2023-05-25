@@ -1,85 +1,6 @@
 import styled from 'styled-components';
-import { useState, useEffect, useRef } from 'react';
 
 function SectionAbout() {
-	const data = [
-		{
-			id: 0,
-			title: 'sociable',
-			content: 'sociable',
-			contents: '사교적인',
-			dots: '',
-		},
-		{
-			id: 1,
-			title: 'enterprising',
-			content: 'enterprising',
-			contents: '진취력있는',
-			dots: '',
-		},
-		{
-			id: 2,
-			title: 'shrewd',
-			content: 'shrewd',
-			contents: 'catch on fast',
-			dots: '',
-		},
-		{
-			id: 3,
-			title: 'sociable',
-			content: 'sociable',
-			contents: '사교적인',
-			dots: '',
-		},
-		{
-			id: 4,
-			title: 'considerate',
-			content: 'considerate',
-			contents: '배려하는',
-			dots: '',
-		},
-		{
-			id: 5,
-			title: 'hardworking',
-			content: 'hardworking',
-			contents: '성실한',
-			dots: '',
-		},
-		{
-			id: 6,
-			title: 'figma',
-			content: 'figma',
-			contents: '김아름',
-			dots: '',
-		},
-		{
-			id: 7,
-			title: 'responsibility',
-			content: 'responsibility',
-			contents: '책임감',
-			dots: '',
-		},
-	];
-
-	const delay = 2500;
-	const [index, setIndex] = useState(0);
-
-	const timeoutRef = useRef(null);
-
-	function resetTimeout() {
-		if (timeoutRef.current) {
-			clearTimeout(timeoutRef.current);
-		}
-	}
-
-	useEffect(() => {
-		resetTimeout();
-		timeoutRef.current = setTimeout(() => setIndex((prevIndex) => (prevIndex === data.length - 1 ? 0 : prevIndex + 1)), delay);
-
-		return () => {
-			resetTimeout();
-		};
-	});
 	return (
 		<Container id="profile">
 			<TitleWrap>
@@ -90,25 +11,31 @@ function SectionAbout() {
 						<br />
 						AHREUM
 					</h2>
+					<h3>KIM AHREUM</h3>
 				</Title>
 			</TitleWrap>
 			<Wrap>
 				<IMG>
-					<img src={process.env.PUBLIC_URL + '/img/kim_img02.jpg'} alt="증명사진" />
+					<img src={process.env.PUBLIC_URL + '/img/kim_img02.jpg'} alt="사진" />
 				</IMG>
 				<TextWrap>
 					<Txt>
 						<h3>PROFILE</h3>
 						<ContentWrap>
-							<h4>김아름</h4>
-							<Content> 프론트엔드 웹 개발자 양성 과정 - HTML5, CSS3, 자바스크립트(Java Script), 제이쿼리(JQuery), 리액트(React)</Content>
+							<h4>김아름(1989.03.07)</h4>
+							<Content> 서울 마포구 거주 (본가:부산)</Content>
+							<h4>E-MAIL</h4>
+							<Content>aarreum0307@gmail.com</Content>
+							<h4>PHONE NUMBER</h4>
+							<Content>010.2967.5037</Content>
 						</ContentWrap>
 					</Txt>
 					<Txt>
 						<h3>CAREER</h3>
 						<ContentWrap>
-							<h4>2023.01.09 - 2023.02.28</h4>
-							<Content> 프론트엔드 웹 개발자 양성 과정 - HTML5, CSS3, 자바스크립트(Java Script), 제이쿼리(JQuery), 리액트(React)</Content>
+							<h4>2019.07 - 2021.08</h4>
+							<Content>(주)단비 빅데이터팀 / 빅데이터 시각화</Content>
+							<Content>Tableau, MSTR, POWER BI을 사용 대시보드 기획 및 대시보드 개발, 구축 및 관리/운영 등을 하였습니다.</Content>
 						</ContentWrap>
 					</Txt>
 					<Txt>
@@ -125,6 +52,11 @@ function SectionAbout() {
 							<h4>2008.03.03 - 2014.08.14 </h4>
 							<Content>부산외국어대학교 한국어문학부 졸업 /부전공: 일본어문학</Content>
 						</ContentWrap>
+						<ContentWrap>
+							<h4>2005.03 - 2008.02 </h4>
+							<Content>부산 혜화여자고등학교 졸업 / 문과</Content>
+							<h4>SKILLS : HTML, CSS, JQUERY, JAVASCRIPT, REACT , GITHUB, FIGMA, XD</h4>
+						</ContentWrap>
 					</Txt>
 				</TextWrap>
 			</Wrap>
@@ -136,7 +68,12 @@ export default SectionAbout;
 
 const Container = styled.div`
 	width: 100%;
-	height: 1000px;
+	height: 1400px;
+	@media ${({ theme }) => theme.device.laptop} {
+	}
+	@media ${({ theme }) => theme.device.mobile} {
+		height: 1200px;
+	}
 `;
 const TitleWrap = styled.div`
 	z-index: 2;
@@ -144,7 +81,7 @@ const TitleWrap = styled.div`
 	width: 100%;
 	max-width: 75%;
 	margin: 10px auto;
-	padding-top: 100px;
+	padding-top: 150px;
 	display: flex;
 	justify-content: space-between;
 
@@ -153,7 +90,7 @@ const TitleWrap = styled.div`
 		position: relative;
 
 		width: 100%;
-		max-width: 80%;
+		max-width: 75%;
 		margin: 0 auto;
 		padding-top: 200px;
 		display: flex;
@@ -161,7 +98,7 @@ const TitleWrap = styled.div`
 	}
 	@media ${({ theme }) => theme.device.tablet} {
 		width: 100%;
-		max-width: 80%;
+		max-width: 75%;
 		display: flex;
 		justify-content: space-between;
 	}
@@ -184,49 +121,27 @@ const Title = styled.div`
 		align-items: center;
 		justify-content: center;
 	}
-	h3 {
-		width: 80%;
 
-		font-weight: 500;
-		color: #000;
-		font-size: 18px;
-		line-height: 160%;
-		margin-top: 40px;
-		@media ${({ theme }) => theme.device.mobile} {
-			text-align: center;
-
-			font-weight: 500;
-			color: #000;
-			font-size: 18px;
-		}
-	}
 	h2 {
-		width: 60%;
-
+		width: 100%;
+		max-width: 75%;
+		text-align: left;
 		font-weight: 600;
 		color: #000;
 		font-size: 4rem;
 		margin-top: 20px;
 		line-height: 120%;
-
 		@media ${({ theme }) => theme.device.tablet} {
-			width: 100%;
-
+			display: none;
+		}
+	}
+	h3 {
+		display: none;
+		@media ${({ theme }) => theme.device.tablet} {
+			display: block;
 			font-weight: 600;
 			color: #000;
-			font-size: 50px;
-			margin-top: 20px;
-			line-height: 120%;
-		}
-		@media ${({ theme }) => theme.device.mobile} {
-			text-align: center;
-			width: 100%;
-
-			font-weight: 700;
-			color: #000;
-			font-size: 50px;
-			margin-top: 20px;
-			line-height: 120%;
+			font-size: 2.25rem;
 		}
 	}
 `;
@@ -234,6 +149,15 @@ const Title = styled.div`
 const IMG = styled.div`
 	width: 85%;
 	height: 85%;
+	@media ${({ theme }) => theme.device.laptop} {
+		font-size: 2.5rem;
+		font-weight: 600;
+	}
+	@media ${({ theme }) => theme.device.tablet} {
+		display: none;
+	}
+	@media ${({ theme }) => theme.device.mobile} {
+	}
 	img {
 		width: 100%;
 		height: 100%;
@@ -248,14 +172,14 @@ const Wrap = styled.div`
 	justify-content: space-between;
 	align-items: flex-start;
 	width: 100%;
-	height: 70%;
+	height: 60%;
 	max-width: 75%;
 	margin: 0 auto;
 
 	color: ${({ theme }) => theme.colors.black_color};
+	@media ${({ theme }) => theme.device.laptop} {
+	}
 	@media ${({ theme }) => theme.device.mobile} {
-		margin: 200px auto;
-		height: 400px;
 	}
 `;
 
@@ -267,6 +191,8 @@ const TextWrap = styled.div`
 	width: 100%;
 	height: 100%;
 	margin-right: 10px;
+	@media ${({ theme }) => theme.device.tablet} {
+	}
 	@media ${({ theme }) => theme.device.mobile} {
 		justify-content: space-between;
 	}
@@ -276,9 +202,20 @@ const Txt = styled.div`
 	width: 40%;
 	margin: 0 auto;
 	z-index: 2;
+	@media ${({ theme }) => theme.device.tablet} {
+		width: 50%;
+	}
+	@media ${({ theme }) => theme.device.mobile} {
+		justify-content: space-between;
+	}
 	&:last-child {
 		width: 90%;
 		margin: 0 auto;
+		@media ${({ theme }) => theme.device.tablet} {
+			width: 100%;
+		}
+		@media ${({ theme }) => theme.device.mobile} {
+		}
 	}
 	color: ${({ theme }) => theme.colors.white_color};
 	h2 {
