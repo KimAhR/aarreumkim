@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/aarreumkim/static/css/main.a9e509dc.css",
+    "main.js": "/aarreumkim/static/js/main.b87814ba.js",
+    "static/js/787.dc123e75.chunk.js": "/aarreumkim/static/js/787.dc123e75.chunk.js",
+    "index.html": "/aarreumkim/index.html",
+    "main.a9e509dc.css.map": "/aarreumkim/static/css/main.a9e509dc.css.map",
+    "main.b87814ba.js.map": "/aarreumkim/static/js/main.b87814ba.js.map",
+    "787.dc123e75.chunk.js.map": "/aarreumkim/static/js/787.dc123e75.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a9e509dc.css",
+    "static/js/main.b87814ba.js"
+  ]
+}
