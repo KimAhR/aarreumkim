@@ -131,7 +131,7 @@ const TextBox = styled.div`
 			font-weight: 600;
 		}
 		@media ${({ theme }) => theme.device.mobile} {
-			font-size: 4rem;
+			font-size: 3rem;
 			font-weight: 600;
 		}
 	}
