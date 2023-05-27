@@ -93,7 +93,7 @@ const TextLine01 = styled.div`
 	width: 65%;
 	margin: 0 auto;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	font-size: 3rem;
 	font-weight: 600;
 
@@ -117,7 +117,7 @@ const TextLine02 = styled.div`
 	width: 65%;
 	margin: 0 auto;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	h3 {
 		font-size: 3rem;
 		font-weight: 600;
@@ -138,7 +138,7 @@ const TextLine03 = styled.div`
 	width: 65%;
 	margin: 0 auto;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	h3 {
 		font-size: 3rem;
 		font-weight: 600;
@@ -158,7 +158,7 @@ const TextLine04 = styled.div`
 	width: 65%;
 	margin: 0 auto;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	h3 {
 		font-size: 3rem;
 		font-weight: 600;

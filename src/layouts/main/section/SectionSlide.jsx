@@ -43,7 +43,7 @@ const SlideComponent = () => {
 							REACT
 							<br /> PROJECT
 						</h1>
-
+						<h2>LEARN REACT PROJECT</h2>
 						<h3>
 							React 원리 이해 · React의 기본 구조 및 실행 방법 이해 · 컴포넌트 생성 및 라이프 사이클 · SPA(Single Page Application)의 이해 및 구현, 웹 페이지 개선 · 클래스 컴포넌트에서 함수형
 							컴포넌트의 비교 및 구현 (React Hooks), 웹 페이지 배포 · Github을 활용한 프로젝트 배포 등을 배웠습니다.
@@ -162,11 +162,20 @@ const Wrap = styled.div`
 	}
 	@media ${({ theme }) => theme.device.tablet} {
 		&::before {
-			display: block;
+			display: none;
 			content: '';
 			width: 100%;
 			height: 1px;
 			background-color: ${({ theme }) => theme.colors.black_color};
+		}
+		@media ${({ theme }) => theme.device.mobile} {
+			&::before {
+				display: none;
+				content: '';
+				width: 100%;
+				height: 1px;
+				background-color: ${({ theme }) => theme.colors.black_color};
+			}
 		}
 	}
 `;
@@ -205,9 +214,10 @@ const Title = styled.div`
 		width: 100%;
 	}
 	@media ${({ theme }) => theme.device.tablet} {
-		width: 100%;
-
 		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 50%;
 		margin-bottom: 100px;
 	}
 	@media ${({ theme }) => theme.device.tablet} {
@@ -229,8 +239,18 @@ const Title = styled.div`
 			font-size: 3rem;
 		}
 		@media ${({ theme }) => theme.device.mobile} {
+			display: none;
 			width: 50%;
 			font-size: 1.25rem;
+		}
+	}
+	h2 {
+		display: none;
+		@media ${({ theme }) => theme.device.mobile} {
+			display: block;
+			width: 100%;
+			font-size: 2rem;
+			text-align: center;
 		}
 	}
 	h3 {
